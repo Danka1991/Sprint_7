@@ -1,4 +1,4 @@
-from curl import Urls
+from curl import Urls  # первый вариант
 import requests
 
 class CourierApi():
@@ -10,4 +10,3 @@ class CourierApi():
     
     def delete(self, id):
         return requests.delete(Urls.delete_courier+str(id))
-

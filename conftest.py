@@ -4,11 +4,12 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import pytest
 from generator import FakeData
 from src.api.CourierApi import CourierApi
-courier_api = CourierApi()
-fake = FakeData()
+from src.api.OrderApi import OrderApi
 
 @pytest.fixture
 def new_courier_session():
+    courier_api = CourierApi()
+    fake = FakeData()
     courier_fake_data = fake.gen_fake_courier_data()
     i = 0 
     create_resp = courier_api.create(courier_fake_data)
